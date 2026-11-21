@@ -1,0 +1,23 @@
+# Java
+target/
+.gradle/
+build/
+
+# Node.js
+node_modules/
+dist/
+coverage/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
