@@ -39,8 +39,10 @@ public class AnalysisController {
 		Edition edition = getEdition(editionId);
 		String text = edition.getExtractedText() == null ? "" : edition.getExtractedText();
 		Map<String, Object> result = runAnalysis(text);
-		edition.setAnalysisJson(writeJson(result));
-		editions.save(edition);
+		if (editions.saveAnalysis(editionId, writeJson(result)) != 1) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+				"A edição foi excluída antes de a análise terminar.");
+		}
 		return result;
 	}
 

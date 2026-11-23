@@ -20,6 +20,7 @@ public class Work {
 
 	private String author;
 	private String sourceLanguage;
+	private UUID coverVersion;
 	private Instant createdAt;
 
 	public Work() {}
@@ -38,5 +39,7 @@ public class Work {
 	public void setAuthor(String author) { this.author = author; }
 	public String getSourceLanguage() { return sourceLanguage; }
 	public void setSourceLanguage(String sourceLanguage) { this.sourceLanguage = sourceLanguage; }
+	public UUID getCoverVersion() { return coverVersion; }
+	public void setCoverVersion(UUID coverVersion) { this.coverVersion = coverVersion; }
 	public Instant getCreatedAt() { return createdAt; }
 }

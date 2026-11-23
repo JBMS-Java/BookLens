@@ -1,5 +1,8 @@
 # Java
 target/
+.data/
+backend/data/
+backend/.venv-libretranslate/
 .gradle/
 build/
 

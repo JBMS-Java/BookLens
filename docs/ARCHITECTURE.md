@@ -100,9 +100,9 @@ Deterministic algorithms must not depend on an AI provider.
 
 ### `translation`
 
-Owns translation jobs, provider adapters and translated document assembly.
-
-The module exposes a provider interface so providers can be changed independently.
+Owns whole-book translation, provider adapters and translated document assembly.
+The LibreTranslate adapter sends extracted text to the configured local service in ordered, size-limited chunks
+and persists the complete translated text before enabling export.
 
 ### `comparison`
 
@@ -314,6 +314,7 @@ Development:
 - PostgreSQL container.
 - Redis container.
 - Uploaded files in a local mounted volume.
+- H2 file database when running without Docker.
 
 Production:
 
@@ -363,7 +364,7 @@ Production may initially deploy backend and frontend separately or through a rev
 6. Deterministic statistics.
 7. Job progress and retry behavior.
 8. Comparison of editions.
-9. Translation provider integration.
+9. LibreTranslate translation provider configuration.
 10. Literary AI analysis.
 11. Export.
 12. EPUB and OCR.
